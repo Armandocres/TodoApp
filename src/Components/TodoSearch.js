@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import '../styles/components/TodoSearch.scss';
+
 
 const TodoSearch = () => {
   return (
-    <input placeholder='Cebolla'/>
+    <input className='TodoSearch' placeholder='Cebolla'/>
   )
 }
 

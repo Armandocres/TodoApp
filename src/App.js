@@ -3,21 +3,20 @@ import { TodoSearch } from './Components/TodoSearch';
 import { TodoList } from './Components/TodoList';
 import { TodoItem } from './Components/TodoItem';
 import { CreateTodoButtom } from './Components/CreateTodoButtom';
-
-import './App.css';
+import './styles/general.scss';
 
 const todos = [
   {
     text: 'Cortar debolla',
-    complete: false
+    completed: false
   },
   {
     text: 'Cortar cebolla',
-    complete: false
+    completed: true
   },
   {
     text: 'Cortar a mi novia',
-    complete: false
+    completed: false
   },
 ]
 
@@ -29,7 +28,11 @@ function App() {
       <TodoSearch />
       <TodoList >
       {todos.map(todo => (
-        <TodoItem text={ todo.text } key={todo.text}/>
+        <TodoItem
+          text={todo.text}
+          key={todo.text}
+          completed={todo.completed}
+        />
         ))}
       </TodoList>
       <CreateTodoButtom />
