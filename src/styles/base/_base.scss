@@ -7,24 +7,5 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: $primary;
-}
-
-.mt-1 {
-  margin-top: 5px;
-}
-
-.mt-5 {
-  margin-top: 20px;
-}
-
-.mb-1 {
-  margin-bottom: 5px;
-}
-
-.mb-5 {
-  margin-bottom: 20px;
-}
-
-.pointer {
-  cursor: pointer;
+  overflow: hidden;
 }
