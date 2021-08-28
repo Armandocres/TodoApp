@@ -1,24 +1,9 @@
 import React, { useState } from 'react';
+import { useLocalStorage } from './hooks/useLocalStorage';
 import { AppUi } from './Components/AppUi';
 
-const defaultTodos = [
-  {
-    text: 'Cortar debolla',
-    completed: false
-  },
-  {
-    text: 'Cortar cebolla',
-    completed: false
-  },
-  {
-    text: 'Cortar a mi novia',
-    completed: false
-  },
-]
-
-
 function App() {
-  const [todos, setTodos] = useState(defaultTodos);
+  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = useState('');
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -40,14 +25,14 @@ function App() {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
 
   const deleteTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
 
   return (
