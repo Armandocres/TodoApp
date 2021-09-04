@@ -1,16 +1,12 @@
 import React from 'react';
+import { onClickButtom } from '../helpers/onButtons';
 import '../styles/components/CreateTodoButtom.scss';
 
 const CreateTodoButtom = () => {
-
-  const onClickButtom = (text) => {
-    console.log(text);
-  }
-
   return (
     <button
       className='CreateTodoButtom'
-      onClick={() => onClickButtom('Hola soy un boton desde una funcion') }
+      onClick={() => onClickButtom('Hola soy un boton desde la consola') }
     >
       +
     </button>

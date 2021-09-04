@@ -5,7 +5,7 @@ import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButtom } from './CreateTodoButtom';
 
-const AppUi = ({totalTodos, completedTodos, searchValue, setSearchValue, searchedTodos, completeTodo, deleteTodo }) => {
+const AppUi = ({loading, error, totalTodos, completedTodos, searchValue, setSearchValue, searchedTodos, completeTodo, deleteTodo }) => {
   return (
     <>
       <TodoCounter
@@ -17,6 +17,10 @@ const AppUi = ({totalTodos, completedTodos, searchValue, setSearchValue, searche
         setSearchValue={setSearchValue}
       />
       <TodoList >
+        {error && <p>Hubo un error</p>}
+        {loading && <p>Estamos cargando...</p>}
+        {(!loading && !searchedTodos.length) && <p>Crea tu primer TODO</p>}
+
       {searchedTodos.map(todo => (
         <TodoItem
           text={todo.text}
