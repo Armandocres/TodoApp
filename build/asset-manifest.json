@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Armandocres/TodoApp/static/css/main.ceb3c1d1.chunk.css",
+    "main.js": "/Armandocres/TodoApp/static/js/main.3a3b37a4.chunk.js",
+    "main.js.map": "/Armandocres/TodoApp/static/js/main.3a3b37a4.chunk.js.map",
+    "runtime-main.js": "/Armandocres/TodoApp/static/js/runtime-main.8c53d48b.js",
+    "runtime-main.js.map": "/Armandocres/TodoApp/static/js/runtime-main.8c53d48b.js.map",
+    "static/js/2.1b1b07ec.chunk.js": "/Armandocres/TodoApp/static/js/2.1b1b07ec.chunk.js",
+    "static/js/2.1b1b07ec.chunk.js.map": "/Armandocres/TodoApp/static/js/2.1b1b07ec.chunk.js.map",
+    "index.html": "/Armandocres/TodoApp/index.html",
+    "static/css/main.ceb3c1d1.chunk.css.map": "/Armandocres/TodoApp/static/css/main.ceb3c1d1.chunk.css.map",
+    "static/js/2.1b1b07ec.chunk.js.LICENSE.txt": "/Armandocres/TodoApp/static/js/2.1b1b07ec.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8c53d48b.js",
+    "static/js/2.1b1b07ec.chunk.js",
+    "static/css/main.ceb3c1d1.chunk.css",
+    "static/js/main.3a3b37a4.chunk.js"
+  ]
+}
