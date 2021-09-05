@@ -5,10 +5,12 @@ import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { TodoContext } from '../TodoContext/index';
 import { CreateTodoButtom } from './CreateTodoButtom';
+import { Modal } from '../Modal/index';
+import { TodoForm } from './TodoForm';
 
 const AppUi = () => {
 
-  const {error, loading, searchedTodos, completeTodo, deleteTodo} = useContext(TodoContext)
+  const {error, loading, searchedTodos, completeTodo, deleteTodo, openModal, setOpenModal} = useContext(TodoContext)
 
 
   return (
@@ -30,7 +32,16 @@ const AppUi = () => {
       />
       ))}
       </TodoList>
-      <CreateTodoButtom />
+
+      {!!openModal && (
+        <Modal>
+          <TodoForm />
+        </Modal>
+      )}
+      <CreateTodoButtom
+        setOpenModal={setOpenModal}
+        openModal={openModal}
+      />
     </>
   )
 }

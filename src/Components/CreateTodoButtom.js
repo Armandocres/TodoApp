@@ -1,12 +1,20 @@
 import React from 'react';
-import { onClickButtom } from '../helpers/onButtons';
 import '../styles/components/CreateTodoButtom.scss';
 
-const CreateTodoButtom = () => {
+const CreateTodoButtom = ({ setOpenModal, openModal }) => {
+
+  const onClickButton = () => {
+    if (openModal) {
+      setOpenModal(false);
+    } else {
+      setOpenModal(true);
+    }
+  };
+
   return (
     <button
       className='CreateTodoButtom'
-      onClick={() => onClickButtom('Hola soy un boton desde la consola') }
+      onClick={onClickButton}
     >
       +
     </button>
