@@ -1,15 +1,23 @@
-import React from 'react';
-import { onSearchButtom } from '../helpers/onButtons';
+import React, { useContext } from 'react';
+import { TodoContext } from '../TodoContext/index'
 import '../styles/components/TodoSearch.scss';
 
-const TodoSearch = ({ searchValue, setSearchValue }) => {
+const TodoSearch = () => {
+
+  const { searchValue, setSearchValue } = useContext(TodoContext)
+
+  const onSearchValueChange = (event) => {
+    console.log(event.target.value);
+    setSearchValue(event.target.value);
+  };
+
   return (
     <>
       <input
         className='TodoSearch'
-        placeholder='Cebolla'
+        placeholder='Busca un TODO'
         value={searchValue}
-        onChange={(event) => onSearchButtom(event, setSearchValue)}
+        onChange={ onSearchValueChange }
       />
       {/* <p>{searchValue}</p> */}
     </>
