@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <TodoHeader >
+      <TodoHeader loading={loading}>
         <TodoCounter
           totalTodos={totalTodos}
           completedTodos={completedTodos}
@@ -40,22 +40,38 @@ function App() {
           setSearchValue={setSearchValue}
         />
       </TodoHeader>
-      <TodoList >
-      {error && <TodoError error={error} />}
-      {loading && <TodosLoading />}
-      {(!loading && !searchedTodos.length) && <EmptyTodos />}
-
-      {searchedTodos.map(todo => (
-      <TodoItem
-        text={todo.text}
-        key={todo.text}
-        completed={todo.completed}
-        onComplete={() => completeTodo(todo.text)}
-        onDeleteTodo={() => deleteTodo(todo.text) }
-      />
-      ))}
+      <TodoList
+        searchValue={searchValue}
+        totalTodos={totalTodos}
+        error={error}
+        loading={loading}
+        searchedTodos={searchedTodos}
+        onError={() => <TodoError />}
+        onLoading={() => <TodosLoading />}
+        onEmtyTodos={() => <EmptyTodos />}
+        onEmtySearchResults={
+          (searchText) => <p>No coincide ninguna busqueda {searchText}</p>
+        }
+        // render={todo => (
+        //   <TodoItem
+        //     text={todo.text}
+        //     key={todo.text}
+        //     completed={todo.completed}
+        //     onComplete={() => completeTodo(todo.text)}
+        //     onDeleteTodo={() => deleteTodo(todo.text)}
+        //   />
+        // )}
+      >
+        {todo => (
+          <TodoItem
+            text={todo.text}
+            key={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDeleteTodo={() => deleteTodo(todo.text)}
+          />
+        )}
       </TodoList>
-
       {!!openModal && (
         <Modal>
           <TodoForm
