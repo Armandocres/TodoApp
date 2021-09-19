@@ -11,6 +11,7 @@ import { EmptyTodos } from './Components/EmptyTodos';
 import { TodoForm } from './Components/TodoForm';
 import { CreateTodoButtom } from './Components/CreateTodoButtom';
 import { Modal } from './Modal/index';
+import { ChangeAlertWithStorageListener } from './Components/ChangeAlert';
 
 function App() {
   const {
@@ -25,7 +26,8 @@ function App() {
     completedTodos,
     searchValue,
     setSearchValue,
-    addTodo
+    addTodo,
+    sincronizedTodos
   } = useTodos()
 
   return (
@@ -84,6 +86,7 @@ function App() {
         setOpenModal={setOpenModal}
         openModal={openModal}
       />
+      <ChangeAlertWithStorageListener sincronized={sincronizedTodos}/>
     </>
   )
 }

@@ -1,7 +1,18 @@
 import React from 'react';
 import '../styles/components/TodoList.scss';
 
-const TodoList = ({ children, error, onError, loading, onLoading, searchedTodos, onEmtyTodos, render, onEmtySearchResults, totalTodos, searchValue }) => {
+const TodoList = ({
+  children,
+  error,
+  onError,
+  loading,
+  onLoading,
+  searchedTodos,
+  onEmtyTodos,
+  render,
+  onEmtySearchResults,
+  totalTodos,
+  searchValue }) => {
   const renderFunc = children || render;
   return (
     <section>
@@ -9,7 +20,7 @@ const TodoList = ({ children, error, onError, loading, onLoading, searchedTodos,
       {loading && onLoading()}
       {(!loading && !totalTodos) && onEmtyTodos()}
       {(!!totalTodos && !searchedTodos?.length) && onEmtySearchResults(searchValue)}
-      { searchedTodos.map(renderFunc) }
+      {(!loading && !error) && searchedTodos.map(renderFunc) }
       <ul>
         { children }
       </ul>
